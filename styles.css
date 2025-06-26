@@ -167,3 +167,31 @@ input:focus {
   from { box-shadow: 0 0 5px #25D366;}
   to { box-shadow: 0 0 20px #25D366, 0 0 35px #25D366;}
 }
+
+.welcome-box {
+  text-align: center;
+  padding: 30px 10px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.rainbow-text {
+  font-size: 2.3rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #ff0000, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ee82ee);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowPulse 6s linear infinite;
+}
+
+.subline {
+  font-size: 1rem;
+  color: #8b949e;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+@keyframes rainbowPulse {
+  0% { background-position: 0% 50%;}
+  100% { background-position: 100% 50%;}
+}

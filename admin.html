@@ -6,39 +6,32 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <script>
-    const pwd = prompt("Enter Admin Password:");
-    if (pwd === "531531") {
-      document.write(`
-        <header>
-          <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250626-WA0003.jpg" class="logo" />
-          <div class="sidebar-btn" onclick="toggleMenu()">⋯</div>
-          <nav id="sidebarMenu" class="hidden">
-            <a href="index.html">🏠 Home</a>
-            <a href="support.html">💬 Support</a>
-            <a href="admin.html">🔐 Admin Panel</a>
-            <a href="contact.html">📩 Contact</a>
-          </nav>
-        </header>
-        <main>
-          <h2>Upload New Song</h2>
-          <form id="uploadForm">
-            <input name="title" placeholder="Song Title" required /><br />
-            <input name="artist" placeholder="Artist Name" required /><br />
-            <input type="date" name="date" required /><br />
-            <label>Select MP3 File</label><br />
-            <input type="file" name="mp3" accept="audio/mp3" required /><br />
-            <label>Preview Image (JPG/PNG)</label><br />
-            <input type="file" name="preview" accept="image/jpeg, image/png" required /><br />
-            <button type="submit">Upload Song</button>
-          </form>
-          <p class="dev-tag">👨‍💻 Site Developer: Ransara Devnath</p>
-        </main>
-        <script src="script.js"></script>
-      `);
-} else {
-      document.write("<h3>❌ Can't access. Please try again.</h3>");
-}
-  </script>
+  <header>
+    <img src="your-logo-link-here" class="logo" />
+    <div class="sidebar-btn" onclick="toggleMenu()">⋯</div>
+    <nav id="sidebarMenu" class="hidden">
+      <a href="index.html">🏠 Home</a>
+      <a href="support.html">💬 Support</a>
+      <a href="admin.html">🔐 Admin Panel</a>
+      <a href="contact.html">📩 Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Upload New Song</h2>
+    <form id="uploadForm">
+      <input name="title" placeholder="Song Title" required /><br />
+      <input name="artist" placeholder="Artist Name" required /><br />
+      <input type="date" name="date" required /><br />
+      <label>Select MP3 File</label><br />
+      <input type="file" name="mp3" accept="audio/mp3" required /><br />
+      <label>Preview Image (JPG/PNG)</label><br />
+      <input type="file" name="preview" accept="image/jpeg, image/png" required /><br />
+      <button type="submit">Upload Song</button>
+    </form>
+    <p class="dev-tag">👨‍💻 Site Developer: Ransara Devnath</p>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

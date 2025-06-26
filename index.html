@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sonic Ceylon – Feel the Beat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
 <body>
+  <!-- Welcome Box with RGB Animation -->
+  <div class="welcome-box">
+    <h1 class="rainbow-text">🎵 Welcome to Sonic Ceylon 🎶</h1>
+    <p class="subline">Feel the rhythm of Sri Lankan soul ✨</p>
+  </div>
+
+  <!-- Site Header -->
   <header>
     <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250626-WA0003.jpg" class="logo" alt="Sonic Ceylon Logo" />
     <div class="sidebar-btn" onclick="toggleMenu()">⋯</div>
@@ -19,12 +17,15 @@
     </nav>
     <input type="text" id="searchBar" placeholder="Search songs..." oninput="searchSongs(this.value)" />
   </header>
+
+  <!-- Search Results -->
   <section id="resultsArea">
     <div id="searchMessage"></div>
     <div id="results"></div>
   </section>
+
+  <!-- Footer -->
   <footer class="footer-tag">
     <span class="dev-tag">👨‍💻 Site Developer: Ransara Devnath</span>
   </footer>
 </body>
-</html>
