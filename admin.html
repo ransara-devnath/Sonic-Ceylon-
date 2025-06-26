@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <script>
+    const pwd = prompt("Enter Admin Password:");
+    if (pwd === "531531") {
+      document.write(`
+        <form id="uploadForm">
+          <input name="title" placeholder="Song Title" required><br>
+          <input name="artist" placeholder="Artist Name" required><br>
+          <input name="date" type="date" required><br>
+          <input name="mp3" type="file" accept="audio/mp3" required><br>
+          <input name="preview" type="file" accept="image/jpeg,image/png" required><br>
+          <button type="submit">Upload</button>
+        </form>
+        <p>Note: You must connect this with Netlify Function (uploadSong.js)</p>
+      `);
+} else {
+      document.write("<h3>Can't access. Please try again</h3>");
+}
+  </script>
+</body>
+</html>
