@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Support – Sonic Ceylon</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250626-WA0003.jpg" class="logo" alt="Sonic Ceylon Logo" />
+    <div class="sidebar-btn" onclick="toggleMenu()">⋯</div>
+    <nav id="sidebarMenu" class="hidden">
+      <a href="index.html">🏠 Home</a>
+      <a href="support.html">💬 Support</a>
+      <a href="admin.html">🔐 Admin Panel</a>
+      <a href="contact.html">📩 Contact</a>
+    </nav>
+  </header>
+
   <main>
-    <form action="mailto:ransaramax87@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <textarea name="message" placeholder="Your Feedback" required></textarea>
+    <h2>Need Help? 🛟</h2>
+    <form action="mailto:ransaramax87@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required /><br />
+      <textarea name="message" placeholder="Your Message" required></textarea><br />
       <button type="submit">Send Feedback</button>
     </form>
-    <p class="animated">Developer: Ransara Devnath</p>
-    <a href="index.html">⬅️ Home</a>
+    <p class="dev-tag">👨‍💻 Site Developer: Ransara Devnath</p>
+    <a class="download-btn" href="index.html">⬅️ Back to Home</a>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Now Playing – Sonic Ceylon</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/ransara-devnath/Sonic-Ceylon-/refs/heads/main/Site%20Logo/IMG-20250626-WA0003.jpg?token=GHSAT0AAAAAADF6MKUX6SZUJLP3DXTQKNS42C462RA" class="logo" />
+    <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250626-WA0003.jpg" class="logo" alt="Sonic Logo" />
+    <div class="sidebar-btn" onclick="toggleMenu()">⋯</div>
+    <nav id="sidebarMenu" class="hidden">
+      <a href="index.html">🏠 Home</a>
+      <a href="support.html">💬 Support</a>
+      <a href="admin.html">🔐 Admin Panel</a>
+      <a href="contact.html">📩 Contact</a>
+    </nav>
   </header>
+
   <main>
-    <h2 id="title"></h2>
+    <h2 id="title">Loading title...</h2>
     <h4 id="artist"></h4>
     <p id="date"></p>
-    <img id="preview" class="preview" />
-    <audio id="player" controls></audio>
+    <img id="preview" class="preview" alt="Preview Image" />
+    <audio id="player" controls autoplay></audio>
     <a id="downloadBtn" class="download-btn" download>⬇️ Download MP3</a>
   </main>
+
+  <footer class="footer-tag">
+    <span class="dev-tag">👨‍💻 Site Developer: Ransara Devnath</span>
+  </footer>
+
   <script>
-    const song = new URLSearchParams(window.location.search).get('song');
-    fetch(`database/${song}/info.json`).then(res => res.json()).then(data => {
-      document.getElementById("title").textContent = data.title;
-      document.getElementById("artist").textContent = data.artist;
-      document.getElementById("date").textContent = "Released: " + data.date;
-      document.getElementById("preview").src = `database/${song}/${data.preview}`;
-      document.getElementById("player").src = `database/${song}/${data.mp3}`;
-      document.getElementById("downloadBtn").href = `database/${song}/${data.mp3}`;
+    // Load song name from URL
+    const params = new URLSearchParams(window.location.search);
+    const song = params.get("song");
+
+    if (song) {
+      fetch(`database/${song}/info.json`)
+.then(res => res.json())
+.then(data => {
+          document.getElementById("title").textContent = data.title;
+          document.getElementById("artist").textContent = data.artist;
+          document.getElementById("date").textContent = "Released: " + data.date;
+          document.getElementById("preview").src = `database/${song}/${data.preview}`;
+          document.getElementById("player").src = `database/${song}/${data.mp3}`;
+          document.getElementById("downloadBtn").href = `database/${song}/${data.mp3}`;
+})
+.catch(() => {
+          document.querySelector("main").innerHTML = "<p>❌ Song info not found.</p>";
 });
+} else {
+      document.querySelector("main").innerHTML = "<p>❌ No song selected.</p>";
+}
   </script>
+  <script src="script.js"></script>
 </body>
 </html>

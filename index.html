@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sonic Ceylon – Feel the Beat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250626-WA0003.jpg" alt="Logo" class="logo" />
-    <div class="sidebar-btn">⋯</div>
-    <input type="text" id="searchBar" placeholder="Search for songs..." oninput="searchSongs(this.value)" />
+    <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250626-WA0003.jpg" class="logo" alt="Sonic Ceylon Logo" />
+    <div class="sidebar-btn" onclick="toggleMenu()">⋯</div>
+    <nav id="sidebarMenu" class="hidden">
+      <a href="index.html">🏠 Home</a>
+      <a href="support.html">💬 Support</a>
+      <a href="admin.html">🔐 Admin Panel</a>
+      <a href="contact.html">📩 Contact</a>
+    </nav>
+    <input type="text" id="searchBar" placeholder="Search songs..." oninput="searchSongs(this.value)" />
   </header>
   <section id="resultsArea">
     <div id="searchMessage"></div>
     <div id="results"></div>
   </section>
+  <footer class="footer-tag">
+    <span class="dev-tag">👨‍💻 Site Developer: Ransara Devnath</span>
+  </footer>
 </body>
 </html>

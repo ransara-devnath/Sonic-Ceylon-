@@ -1,65 +1,169 @@
+/* Base Styles */
 body {
   background-color: #0d1117;
   color: #c9d1d9;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
+  transition: background 0.5s ease, color 0.5s ease;
+  scroll-behavior: smooth;
 }
+
 .logo {
-  height: 50px;
+  height: 60px;
   margin: 10px;
 }
-input, textarea {
-  width: 90%;
-  margin: 10px auto;
+
+header {
+  display: flex;
+  align-items: center;
   padding: 10px;
-  background: #161b22;
-border: 1px solid #30363d;
+  background-color: #161b22;
+  position: relative;
+}
+
+input[type="text"],
+textarea,
+input[type="email"] {
+  background-color: #161b22;
+  border: 1px solid #30363d;
   color: #c9d1d9;
-  border-radius: 6px;
-  display: block;
-}
-button {
-  background: #238636;
-  color: white;
   padding: 10px;
-  border: none;
-  margin: 10px auto;
-  display: block;
-  border-radius: 6px;
-}
-button:hover {
-  box-shadow: 0 0 10px #58a6ff;
-}
-.result-item {
   margin: 10px;
-  background: #161b22;
-  padding: 10px;
+  width: 90%;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #238636;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
-  animation: fadeIn 0.4s ease-in;
+  margin: 10px;
 }
-.preview {
-  width: 100%;
-  max-width: 350px;
+
+button:hover,
+input:focus {
+  box-shadow: 0 0 10px #58a6ff;
+  outline: none;
 }
-.download-btn {
-  display: inline-block;
-  background: #58a6ff;
-  color: white;
+
+/* Sidebar Menu */
+.sidebar-btn {
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+#sidebarMenu {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background-color: #161b22;
   padding: 10px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+#sidebarMenu.hidden {
+  display: none;
+}
+
+#sidebarMenu a {
+  color: #c9d1d9;
   text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0;
 }
-.animated {
-  animation: pulse 2s infinite;
+
+/* Search + Results */
+#searchBar {
+  width: 90%;
+  margin: 20px auto;
+  display: block;
 }
-@keyframes pulse {
-  0% { opacity: 1;}
-  50% { opacity: 0.5;}
-  100% { opacity: 1;}
+
+.result-item {
+  background-color: #161b22;
+  margin: 10px auto;
+  padding: 15px;
+  width: 90%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.4s ease-in;
 }
+
+.result-item:hover {
+  background-color: #238636;
+  transform: scale(1.02);
+}
+
+#searchMessage {
+  text-align: center;
+  margin: 20px;
+  font-style: italic;
+  color: #58a6ff;
+}
+
+/* Song Info Page */
+.preview {
+  display: block;
+  max-width: 100%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.download-btn {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background: #58a6ff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.download-btn:hover {
+  box-shadow: 0 0 12px #58a6ff;
+}
+
+/* Footer Developer Tag */
+.footer-tag {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.dev-tag {
+  color: #25D366;
+  font-weight: bold;
+  font-size: 18px;
+  background: #161b22;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid #238636;
+  animation: neonGlow 1.8s infinite alternate;
+  display: inline-block;
+}
+
+/* Animations */
 @keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes neonGlow {
+  from { box-shadow: 0 0 5px #25D366;}
+  to { box-shadow: 0 0 20px #25D366, 0 0 35px #25D366;}
 }
